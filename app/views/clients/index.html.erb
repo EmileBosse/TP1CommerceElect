@@ -23,7 +23,7 @@
         <td><%= client.Nom %></td>
         <td><%= client.DateNaissance %></td>
         <td><%= client.NAS %></td>
-        <td><%= client.adresses %></td>
+        <td><%= client.adress.NumeroCivique+" "+client.adress.Rue+" "+client.adress.Ville%></td>
         <td><%= client.NombreEnfants %></td>
         <td><%= client.CompteTaxesProprietaire %></td>
         <td><%= link_to 'Show', client %></td>

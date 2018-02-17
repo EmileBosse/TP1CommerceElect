@@ -1,5 +1,6 @@
 class AlterClientsConjoints < ActiveRecord::Migration[5.1]
   def change
-    add_column :clients_coinjoints, :coinjoint_id, :bigint
+   add_reference :clients_conjoints, :clients
+
   end
 end

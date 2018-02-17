@@ -1,3 +1,3 @@
 class Institution < ApplicationRecord
-  belongs_to :adresses
+  belongs_to :adress
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180212210410) do
+ActiveRecord::Schema.define(version: 20180217201423) do
 
   create_table "adresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "NumeroCivique"
@@ -27,18 +27,20 @@ ActiveRecord::Schema.define(version: 20180212210410) do
     t.string "Nom"
     t.datetime "DateNaissance"
     t.string "NAS"
-    t.bigint "adresses_id"
+    t.bigint "adress_id"
     t.integer "NombreEnfants"
     t.integer "CompteTaxesProprietaire"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["adresses_id"], name: "index_clients_on_adresses_id"
+    t.index ["adress_id"], name: "index_clients_on_adress_id"
   end
 
   create_table "clients_conjoints", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "client_id", null: false
     t.datetime "dateDebut"
     t.datetime "dateFin"
+    t.bigint "conjoint_id"
+    t.index ["conjoint_id"], name: "index_clients_conjoints_on_conjoint_id"
   end
 
   create_table "clients_employeurs", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -103,7 +105,7 @@ ActiveRecord::Schema.define(version: 20180212210410) do
     t.index ["adresses_id"], name: "index_institutions_on_adresses_id"
   end
 
-  add_foreign_key "clients", "adresses", column: "adresses_id"
+  add_foreign_key "clients", "adresses"
   add_foreign_key "employeurs", "adresses", column: "adresses_id"
   add_foreign_key "etudes", "clients", column: "clients_id"
   add_foreign_key "etudes", "institutions", column: "institutions_id"

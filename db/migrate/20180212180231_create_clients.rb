@@ -5,7 +5,7 @@ class CreateClients < ActiveRecord::Migration[5.1]
       t.string :Nom
       t.datetime :DateNaissance
       t.string :NAS
-      t.references :adresses, foreign_key: true
+      t.references :adress, foreign_key: true
       t.integer :NombreEnfants
       t.integer :CompteTaxesProprietaire
 

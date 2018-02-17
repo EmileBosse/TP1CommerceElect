@@ -1,3 +1,3 @@
 class Employeur < ApplicationRecord
-  belongs_to :adresses
+  belongs_to :adress
 end

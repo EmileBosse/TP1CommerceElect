@@ -1,4 +1,4 @@
 class Etude < ApplicationRecord
-  belongs_to :clients
-  belongs_to :institutions
+  belongs_to :client
+  belongs_to :institution
 end
