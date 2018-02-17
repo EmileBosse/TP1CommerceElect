@@ -6,8 +6,8 @@
 </p>
 
 <p>
-  <strong>Adresses:</strong>
-  <%= @employeur.adresses %>
+  <strong>Adresse:</strong>
+  <%= @employeur.adress.NumeroCivique+" "+@employeur.adress.Rue+" "+@employeur.adress.Ville %>
 </p>
 
 <%= link_to 'Edit', edit_employeur_path(@employeur) %> |

@@ -5,12 +5,12 @@
 <table>
   <thead>
     <tr>
-      <th>Secteuretudes</th>
+      <th>Secteur d'etudes</th>
       <th>Niveau</th>
-      <th>Datedebut</th>
-      <th>Datecompletion</th>
-      <th>Clients</th>
-      <th>Institutions</th>
+      <th>Date de debut</th>
+      <th>Date de completion</th>
+      <th>Client</th>
+      <th>Institution</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,8 +22,8 @@
         <td><%= etude.Niveau %></td>
         <td><%= etude.DateDebut %></td>
         <td><%= etude.DateCompletion %></td>
-        <td><%= etude.clients %></td>
-        <td><%= etude.institutions %></td>
+        <td><%= etude.client.Prenom+" "+etude.client.Nom %></td>
+        <td><%= etude.institution.Nom %></td>
         <td><%= link_to 'Show', etude %></td>
         <td><%= link_to 'Edit', edit_etude_path(etude) %></td>
         <td><%= link_to 'Destroy', etude, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Nom</th>
-      <th>Adresses</th>
+      <th>Adresse</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,7 +15,7 @@
     <% @employeurs.each do |employeur| %>
       <tr>
         <td><%= employeur.Nom %></td>
-        <td><%= employeur.adresses %></td>
+        <td><%= employeur.adress.NumeroCivique+" "+employeur.adress.Rue+" "+employeur.adress.Ville %></td>
         <td><%= link_to 'Show', employeur %></td>
         <td><%= link_to 'Edit', edit_employeur_path(employeur) %></td>
         <td><%= link_to 'Destroy', employeur, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -17,8 +17,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :adresses_id %>
-    <%= form.text_field :adresses_id, id: :employeur_adresses_id %>
+    <%= form.label :adresse_id %>
+    <%= form.select :adress_id, options_for_select(Adress.all.map{|a|[a.NumeroCivique+" "+a.Rue+", "+a.Ville, a.id]}) %>
   </div>
 
   <div class="actions">

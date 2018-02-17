@@ -11,27 +11,27 @@
 </p>
 
 <p>
-  <strong>Datenaissance:</strong>
+  <strong>Date de naissance:</strong>
   <%= @client.DateNaissance %>
 </p>
 
 <p>
-  <strong>Nas:</strong>
+  <strong>NAS:</strong>
   <%= @client.NAS %>
 </p>
 
 <p>
-  <strong>Adresses:</strong>
-  <%= @client.adress %>
+  <strong>Adresse:</strong>
+  <%= @client.adress.NumeroCivique+" "+@client.adress.Rue+" "+@client.adress.Ville %>
 </p>
 
 <p>
-  <strong>Nombreenfants:</strong>
+  <strong>Nombre d'enfants:</strong>
   <%= @client.NombreEnfants %>
 </p>
 
 <p>
-  <strong>Comptetaxesproprietaire:</strong>
+  <strong>Compte taxes proprietaire:</strong>
   <%= @client.CompteTaxesProprietaire %>
 </p>
 

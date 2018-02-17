@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Secteuretudes:</strong>
+  <strong>Secteur d'etudes:</strong>
   <%= @etude.SecteurEtudes %>
 </p>
 
@@ -11,23 +11,23 @@
 </p>
 
 <p>
-  <strong>Datedebut:</strong>
+  <strong>Date de debut:</strong>
   <%= @etude.DateDebut %>
 </p>
 
 <p>
-  <strong>Datecompletion:</strong>
+  <strong>Date de completion:</strong>
   <%= @etude.DateCompletion %>
 </p>
 
 <p>
-  <strong>Clients:</strong>
-  <%= @etude.clients %>
+  <strong>Client:</strong>
+  <%= @etude.client.Prenom+" "+@etude.client.Nom %>
 </p>
 
 <p>
-  <strong>Institutions:</strong>
-  <%= @etude.institutions %>
+  <strong>Institution:</strong>
+  <%= @etude.institution.Nom %>
 </p>
 
 <%= link_to 'Edit', edit_etude_path(@etude) %> |

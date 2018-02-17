@@ -69,6 +69,6 @@ class EtudesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def etude_params
-      params.require(:etude).permit(:SecteurEtudes, :Niveau, :DateDebut, :DateCompletion, :clients_id, :institutions_id)
+      params.require(:etude).permit(:SecteurEtudes, :Niveau, :DateDebut, :DateCompletion, :client_id, :institution_id)
     end
 end

@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :SecteurEtudes %>
+    <%= form.label :"Secteur d'etudes" %>
     <%= form.text_field :SecteurEtudes, id: :etude_SecteurEtudes %>
   </div>
 
@@ -22,23 +22,23 @@
   </div>
 
   <div class="field">
-    <%= form.label :DateDebut %>
+    <%= form.label :"Date de debut" %>
     <%= form.datetime_select :DateDebut, id: :etude_DateDebut %>
   </div>
 
   <div class="field">
-    <%= form.label :DateCompletion %>
+    <%= form.label :"Date de completion" %>
     <%= form.datetime_select :DateCompletion, id: :etude_DateCompletion %>
   </div>
 
   <div class="field">
-    <%= form.label :clients_id %>
-    <%= form.text_field :clients_id, id: :etude_clients_id %>
+    <%= form.label :client_id %>
+    <%= form.select :client_id, options_for_select(Client.all.map{|c|[c.Prenom+" "+c.Nom, c.id]}) %>
   </div>
 
   <div class="field">
-    <%= form.label :institutions_id %>
-    <%= form.text_field :institutions_id, id: :etude_institutions_id %>
+    <%= form.label :institution_id %>
+    <%= form.select :institution_id, options_for_select(Institution.all.map{|i|[i.Nom, i.id]}) %>
   </div>
 
   <div class="actions">

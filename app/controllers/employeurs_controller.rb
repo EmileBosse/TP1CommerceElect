@@ -69,6 +69,6 @@ class EmployeursController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def employeur_params
-      params.require(:employeur).permit(:Nom, :adresses_id)
+      params.require(:employeur).permit(:Nom, :adress_id)
     end
 end
