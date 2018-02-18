@@ -64,10 +64,10 @@ ActiveRecord::Schema.define(version: 20180217201423) do
 
   create_table "employeurs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "Nom"
-    t.bigint "adresses_id"
+    t.bigint "adress_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["adresses_id"], name: "index_employeurs_on_adresses_id"
+    t.index ["adress_id"], name: "index_employeurs_on_adress_id"
   end
 
   create_table "enfants", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -89,25 +89,25 @@ ActiveRecord::Schema.define(version: 20180217201423) do
     t.string "Niveau"
     t.datetime "DateDebut"
     t.datetime "DateCompletion"
-    t.bigint "clients_id"
-    t.bigint "institutions_id"
+    t.bigint "client_id"
+    t.bigint "institution_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["clients_id"], name: "index_etudes_on_clients_id"
-    t.index ["institutions_id"], name: "index_etudes_on_institutions_id"
+    t.index ["client_id"], name: "index_etudes_on_client_id"
+    t.index ["institution_id"], name: "index_etudes_on_institution_id"
   end
 
   create_table "institutions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "Nom"
-    t.bigint "adresses_id"
+    t.bigint "adress_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["adresses_id"], name: "index_institutions_on_adresses_id"
+    t.index ["adress_id"], name: "index_institutions_on_adress_id"
   end
 
   add_foreign_key "clients", "adresses"
-  add_foreign_key "employeurs", "adresses", column: "adresses_id"
-  add_foreign_key "etudes", "clients", column: "clients_id"
-  add_foreign_key "etudes", "institutions", column: "institutions_id"
-  add_foreign_key "institutions", "adresses", column: "adresses_id"
+  add_foreign_key "employeurs", "adresses"
+  add_foreign_key "etudes", "clients"
+  add_foreign_key "etudes", "institutions"
+  add_foreign_key "institutions", "adresses"
 end

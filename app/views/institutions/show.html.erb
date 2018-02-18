@@ -7,7 +7,7 @@
 
 <p>
   <strong>Adresse:</strong>
-  <%= @institution.adresses %>
+  <%= @institution.adress.NumeroCivique+" "+@institution.adress.Rue+" "+@institution.adress.Ville %>
 </p>
 
 <%= link_to 'Edit', edit_institution_path(@institution) %> |
