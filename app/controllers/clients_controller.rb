@@ -15,6 +15,7 @@ class ClientsController < ApplicationController
   # GET /clients/new
   def new
     @client = Client.new
+    1.times {@client.etudes.build}
   end
 
   # GET /clients/1/edit
@@ -69,6 +70,6 @@ class ClientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def client_params
-      params.require(:client).permit(:Prenom, :Nom, :DateNaissance, :NAS, :adress_id, :NombreEnfants, :CompteTaxesProprietaire)
+      params.require(:client).permit(:Prenom, :Nom, :DateNaissance, :NAS, :adress_id, :NombreEnfants, :CompteTaxesProprietaire, etude_attributes:[:id, :SecteurEtudes, :Niveau, :DateDebut, :DateCompletion, :client_id, :institution_id])
     end
 end

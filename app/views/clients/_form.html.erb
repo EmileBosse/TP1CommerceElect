@@ -11,40 +11,78 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :Prenom %>
     <%= form.text_field :Prenom, id: :client_Prenom %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :Nom %>
     <%= form.text_field :Nom, id: :client_Nom %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :"Date de Naissance" %>
     <%= form.datetime_select :DateNaissance, id: :client_DateNaissance %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :NAS %>
     <%= form.text_field :NAS, id: :client_NAS %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :adresse_id %>
     <%= form.select :adress_id, options_for_select(Adress.all.map{|a|[a.NumeroCivique+" "+a.Rue+", "+a.Ville, a.id]}) %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :"Nombre d'enfants" %>
     <%= form.number_field :NombreEnfants, id: :client_NombreEnfants %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :"Compte Taxes Proprietaire" %>
     <%= form.number_field :CompteTaxesProprietaire, id: :client_CompteTaxesProprietaire %>
   </div>
+
+  <div class="form-group">
+    <h3>Etudes</h3>
+    <%= form.fields_for :etude do |etude_form| %>
+      <div class="form-group">
+        <%= etude_form.label :"Secteur d'études" %>
+        <%= etude_form.text_field :SecteurEtudes %>
+      </div>
+
+      <div class="form-group">
+        <%= etude_form.label :Niveau %>
+        <%= etude_form.text_field :Niveau %>
+      </div>
+
+      <div class="form-group">
+        <%= etude_form.label :"Date de début" %>
+        <%= etude_form.datetime_select :DateDebut, id: :etude_DateDebut %>
+      </div>
+
+      <div class="form-group">
+        <%= etude_form.label :"Date de complétion" %>
+        <%= etude_form.datetime_select :DateCompletion, id: :etude_DateCompletion %>
+      </div>
+
+      <div class="form-group">
+        <div class="field">
+          <%= form.label :institution_id %>
+          <%= form.select :institution_id, options_for_select(Institution.all.map{|i|[i.Nom, i.id]}) %>
+        </div>
+      </div>
+
+
+
+    <% end %>
+
+  </div>
+
+
 
   <div class="actions">
     <%= form.submit %>
